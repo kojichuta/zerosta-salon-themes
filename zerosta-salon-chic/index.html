@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ゼロスタ サロン Chic</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <style>
+    /* ===== ヘッダー（汎用） ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px;
+    }
+    .site-header .brand {
+      font-weight: 700; font-size: 1.1rem; color: var(--fg);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .site-header .brand .tag {
+      font-size: .75rem; background: var(--accent); color:#000;
+      padding: 2px 8px; border-radius: 999px;
+    }
+    /* ナビ */
+    .nav-inner {
+      display: flex; gap: 20px;
+    }
+    .nav-inner a {
+      color: var(--fg); text-decoration: none; font-weight: 500;
+    }
+    .btn-nav {
+      background: var(--accent); color:#000; padding: 6px 12px;
+      border-radius: 999px; font-weight:700;
+    }
+    /* ハンバーガー */
+    .nav-toggle {
+      display: none; flex-direction: column; gap:5px;
+      width: 28px; height: 22px; background: none; border: none;
+    }
+    .nav-toggle span {
+      display: block; height: 3px; width: 100%; background: var(--fg);
+    }
+    @media (max-width: 768px){
+      .nav-inner {
+        position: absolute; top:100%; left:0; right:0;
+        background: var(--bg); flex-direction: column; align-items: center;
+        display: none; padding: 16px 0;
+      }
+      .nav-inner.is-open { display:flex; }
+      .nav-toggle { display:flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="#top" class="brand">
+      <span>ゼロスタ サロン</span>
+      <span class="tag">Chic</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開閉">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-inner">
+      <a href="#concept">Concept</a>
+      <a href="#menu">Menu</a>
+      <a href="#staff">Staff</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#access">Access</a>
+      <a href="#reserve" class="btn-nav">予約</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">凛として、しなやかに。</h1>
+      <p class="hero-lead">上質で静かな時間をデザインする、ゼロスタ サロン Chic。</p>
+      <div class="hero-buttons">
+        <a href="#reserve" class="btn primary">空席確認・予約へ</a>
+        <a href="#menu" class="btn ghost">メニューを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Concept ===== -->
+  <section id="concept" class="section">
+    <h2 class="section-title">Concept</h2>
+    <div class="cards-3">
+      <div class="card">
+        <img src="assets/img/salon_chic_02.jpg" alt="エステ施術">
+        <h3>心地よい癒し</h3>
+        <p>落ち着いた空間で心身ともにリラックス。</p>
+      </div>
+      <div class="card">
+        <img src="assets/img/salon_chic_03.jpg" alt="フェイシャルケア">
+        <h3>確かな技術</h3>
+        <p>経験豊富なスタッフによる本格的な施術。</p>
+      </div>
+      <div class="card">
+        <img src="assets/img/salon_chic_04.jpg" alt="ラウンジ空間">
+        <h3>洗練された空間</h3>
+        <p>高級感のあるサロンインテリア。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Menu ===== -->
+  <section id="menu" class="section">
+    <h2 class="section-title">Menu</h2>
+    <div class="cards-3">
+      <div class="card menu-card">
+        <img src="assets/img/salon_chic_05.jpg" alt="フェイシャルエステ">
+        <h3>フェイシャル 60'</h3>
+        <p class="price">¥8,000</p>
+        <p>肌本来の美しさを引き出すトリートメント。</p>
+      </div>
+      <div class="card menu-card">
+        <img src="assets/img/salon_chic_06.jpg" alt="ボディオイルトリートメント">
+        <h3>ボディオイル 90'</h3>
+        <p class="price">¥12,000</p>
+        <p>全身を包み込むような極上のリラックス。</p>
+      </div>
+      <div class="card menu-card">
+        <img class="edge-trim" src="assets/img/salon_chic_07.jpg" alt="ハンド＆ネイルケア">
+        <h3>ハンド＆ネイル 60'</h3>
+        <p class="price">¥7,500</p>
+        <p>甘皮ケアと保湿で、指先まで整う清潔感。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Staff ===== -->
+  <section id="staff" class="section">
+    <h2 class="section-title">Staff</h2>
+    <div class="cards-2">
+      <div class="card staff-card">
+        <img src="assets/img/salon_chic_09.jpg" alt="スタッフA">
+        <h3>代表セラピスト</h3>
+        <p>心を込めたケアでお客様をお迎えします。</p>
+      </div>
+      <div class="card staff-card">
+        <img src="assets/img/salon_chic_10.jpg" alt="スタッフB">
+        <h3>エステティシャン</h3>
+        <p>笑顔で寄り添い、丁寧な施術をご提供します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== News ===== -->
+  <section id="news" class="section">
+    <h2 class="section-title">News</h2>
+    <div class="cards-2">
+      <div class="card news-card">
+        <img src="assets/img/salon_chic_11.jpg" alt="キャンペーン情報">
+        <h3>春の新メニュー登場</h3>
+        <p>限定フェイシャルコースをぜひ体験ください。</p>
+      </div>
+      <div class="card news-card">
+        <img src="assets/img/salon_chic_12.jpg" alt="イベント情報">
+        <h3>サロンイベント開催</h3>
+        <p>ご来店者様限定のスペシャル企画を実施。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Gallery ===== -->
+  <section id="gallery" class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="masonry">
+      <img src="assets/img/salon_chic_13.jpg" alt="ギャラリー1">
+      <img src="assets/img/salon_chic_14.jpg" alt="ギャラリー2">
+      <img src="assets/img/salon_chic_15.jpg" alt="ギャラリー3">
+      <img src="assets/img/salon_chic_16.jpg" alt="ギャラリー4">
+    </div>
+  </section>
+
+  <!-- ===== Access ===== -->
+  <section id="access" class="section access">
+    <h2 class="section-title">Access</h2>
+    <div class="access-content">
+      <img src="assets/img/salon_chic_01.jpg" alt="サロン外観">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=35.6900,139.7000&hl=ja&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          title="サロン周辺地図"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Reservation ===== -->
+  <section id="reserve" class="section reserve">
+    <h2 class="section-title">Reservation</h2>
+    <p>お電話または予約サイトからご予約いただけます。</p>
+    <div class="reserve-buttons">
+      <a href="tel:000-0000-0000" class="btn primary">電話予約</a>
+      <a href="#" class="btn ghost">WEB予約</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <small>© <span id="year">2025</span> Zerosta Salon Chic. All Rights Reserved.</small>
+  </footer>
+
+  <!-- JS: ハンバーガー開閉 -->
+  <script>
+    const toggle=document.querySelector('.nav-toggle');
+    const nav=document.querySelector('.nav-inner');
+    if(toggle && nav){
+      toggle.addEventListener('click',()=>nav.classList.toggle('is-open'));
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

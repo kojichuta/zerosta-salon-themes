@@ -1,0 +1,153 @@
+/* ===== Reset ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;line-height:1.6;background:#f8faff;color:#333;}
+
+/* ===== Header ===== */
+.zf-header{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.05);position:sticky;top:0;z-index:1000;}
+.zf-container{max-width:1200px;margin:0 auto;padding:0.8rem 1.2rem;display:flex;justify-content:space-between;align-items:center;}
+.zf-logo{font-weight:700;font-size:1.2rem;}
+.zf-nav ul{list-style:none;display:flex;gap:1rem;}
+.zf-nav a{text-decoration:none;color:#333;}
+.zf-nav-toggle{display:none;}
+
+/* ===== Hero ===== */
+.zf-hero{position:relative;text-align:center;color:#fff;overflow:hidden;}
+.zf-hero img{width:100%;height:80vh;object-fit:cover;display:block;}
+.zf-hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.zf-hero-text h2{font-size:2.5rem;font-weight:700;text-shadow:0 3px 6px rgba(0,0,0,0.6);}
+.zf-hero-text p{text-shadow:0 2px 5px rgba(0,0,0,0.5);}
+.zf-hero-btns{margin-top:1rem;display:flex;gap:1rem;justify-content:center;}
+.btn-primary,.btn-secondary{padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;}
+.btn-primary{background:linear-gradient(90deg,#ff4dc4,#ff7a45);color:#fff;}
+.btn-secondary{background:#fff;color:#333;border:1px solid #ccc;}
+
+/* ===== Sections ===== */
+.zf-section{padding:4rem 1.2rem;max-width:1200px;margin:auto;}
+.zf-section h2{font-size:1.8rem;margin-bottom:2rem;text-align:left;}
+.zf-grid-3,.zf-grid-2,.zf-grid-4{display:grid;gap:1.5rem;}
+.zf-grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.zf-grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+.zf-grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.zf-card img,.zf-menu img{width:100%;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+
+/* ===== Access ===== */
+#access img{width:100%;border-radius:12px;margin-bottom:1rem;}
+#access .btn-primary,#access .btn-secondary{margin-top:0.5rem;display:inline-block;}
+
+/* ===== Footer ===== */
+.zf-footer{text-align:center;padding:1rem;background:#fff;margin-top:2rem;font-size:0.9rem;color:#555;}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  .zf-nav ul{display:none;flex-direction:column;}
+  .zf-nav-toggle{display:block;background:none;border:none;font-size:1.5rem;}
+  .is-open{display:flex !important;}
+  .zf-hero img{height:60vh;}
+  .zf-hero-text h2{font-size:1.8rem;}
+}
+/* =========================
+   POP 調整（画像2/4/6に合わせる）
+   ========================= */
+
+/* 1) ヒーロー：テキストを左下寄せ＆視認性を上げる */
+.zf-hero {
+  position: relative;
+}
+.zf-hero img{
+  width:100%;
+  height:80vh;
+  object-fit:cover;
+  display:block;
+}
+.zf-hero-text{
+  position:absolute;
+  left:8%;
+  bottom:12%;
+  top:auto;
+  transform:none;
+  text-align:left;
+  max-width: min(700px, 86vw);
+}
+.zf-hero-text h2{
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing: .02em;
+  text-shadow: 0 4px 14px rgba(0,0,0,.45);
+}
+.zf-hero-text p{
+  margin-top:.75rem;
+  font-size: clamp(.95rem, 1.6vw, 1.1rem);
+  color:#fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,.45);
+}
+
+/* 2) ボタン色：ヘッダーの「予約」＆ヒーローの「WEB予約」を同じトーンに */
+:root{
+  --pop-grad-a:#FF4DC4;  /* ピンク */
+  --pop-grad-b:#7C5CFF;  /* パープル寄り（画像2の雰囲気） */
+  --pop-grad-hl:#ff6ed2;
+}
+.btn-primary{
+  background: linear-gradient(90deg,var(--pop-grad-a),var(--pop-grad-b));
+  color:#fff;
+  border:none;
+  box-shadow: 0 8px 20px rgba(124,92,255,.28);
+}
+.btn-primary:hover{
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+}
+
+/* ナビの「予約」リンクをボタン化（HTMLを触らずに適用） */
+.zf-nav a[href*="#reservation"]{
+  background: linear-gradient(90deg,var(--pop-grad-a),var(--pop-grad-b));
+  color:#fff !important;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(124,92,255,.28);
+  font-weight:700;
+}
+.zf-nav a[href*="#reservation"]:hover{
+  filter: brightness(1.03);
+}
+
+/* 3) カード（Concept/Menu/Gallery）を統一トーンで少しリフト */
+.zf-card img, .zf-menu img{
+  border-radius: 14px;
+  box-shadow: 0 6px 26px rgba(20,16,40,.08);
+}
+.zf-card{
+  background:#fff;
+  border-radius:16px;
+  box-shadow: 0 8px 30px rgba(20,16,40,.06);
+  overflow:hidden;
+}
+
+/* 4) Access：画像6の雰囲気に（白カード＋丸め＋ボタン色は上の統一） */
+#access .zf-grid-2 > *{
+  background:#fff;
+  border-radius:18px;
+  box-shadow: 0 10px 34px rgba(20,16,40,.08);
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+}
+#access img{
+  border-radius:12px;
+  margin-bottom:.8rem;
+}
+#access .btn-primary, 
+#access .btn-secondary{
+  margin-top:.4rem;
+}
+
+/* 5) レスポンシブ：ヒーローの下寄せを保ったまま可読性確保 */
+@media (max-width: 768px){
+  .zf-hero img{ height: 64vh; }
+  .zf-hero-text{ left:6%; bottom:10%; max-width:92vw; }
+  .zf-hero-text h2{ font-size: clamp(1.8rem, 6.2vw, 2.2rem); }
+  .zf-hero-text p{ font-size: .95rem; }
+  /* ヘッダーの予約ボタンは少し小さめに */
+  .zf-nav a[href*="#reservation"]{
+    padding:.38rem .75rem;
+  }
+}

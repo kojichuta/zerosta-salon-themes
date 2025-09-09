@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zerosta Salon Themes</title>
+  <meta name="description" content="Zerosta Salon のテーマ一覧（Relax / Chic / Pop）。" />
+  <style>
+    :root{
+      --ink:#113236;      /* 文字(濃い緑) */
+      --muted:#4e8d83;    /* 補助色 */
+      --bg:#f7faf9;       /* 背景 */
+      --card:#ffffff;     /* カード */
+      --ring:#2c9a87;     /* アクセント */
+      --shadow:0 10px 28px rgba(16,36,40,.08);
+      --radius:18px;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: "Noto Sans JP", system-ui, -apple-system, "Helvetica Neue", Meiryo, sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:auto;padding:48px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+    .brand{font-weight:700;font-size:clamp(20px,2.6vw,28px)}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .thumb{aspect-ratio:16/9;object-fit:cover;width:100%;background:#eaf3f1}
+    .body{padding:18px 18px 20px}
+    h2{margin:0 0 8px;font-size:clamp(18px,2.2vw,22px)}
+    p{margin:0 0 16px;color:#416a66}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.75em 1.1em;border-radius:999px;border:2px solid var(--ring)}
+    .btn:hover{background:var(--ring);color:#fff;transition:.2s}
+    footer{margin-top:28px;color:#688a86;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Zerosta Salon Themes</div>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="./zerosta-salon-relax/">
+        <img class="thumb" src="./zerosta-salon-relax/assets/img/hero.jpg" alt="Relax テンプレートのヒーロー">
+        <div class="body">
+          <h2>Relax</h2>
+          <p>清潔感・安心感・落ち着きのやさしいトーン。</p>
+          <span class="btn">開く</span>
+        </div>
+      </a>
+
+      <a class="card" href="./zerosta-salon-chic/">
+        <img class="thumb" src="./zerosta-salon-chic/assets/img/hero.jpg" alt="Chic テンプレートのヒーロー">
+        <div class="body">
+          <h2>Chic</h2>
+          <p>シックで都会的な印象。上品で洗練された見た目。</p>
+          <span class="btn">開く</span>
+        </div>
+      </a>
+
+      <a class="card" href="./zerosta-salon-pop/">
+        <img class="thumb" src="./zerosta-salon-pop/assets/img/hero.jpg" alt="Pop テンプレートのヒーロー">
+        <div class="body">
+          <h2>Pop</h2>
+          <p>親しみやすい彩度で元気な印象に。</p>
+          <span class="btn">開く</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>© Zerosta</footer>
+  </div>
+</body>
+</html>
